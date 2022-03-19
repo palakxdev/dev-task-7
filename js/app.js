@@ -143,7 +143,7 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
-  likedPostContainer = document.getElementById( "liked" );
+  const likedPostContainer = document.getElementById( "liked" );
   likedPostContainer.textContent = "";
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
@@ -153,11 +153,13 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
-    const reportedPosts = getReportedPosts();
-    posts.forEach((post) => {
-        const div = createPost(post);
-        document.getElementById( "reported" ).appendChild(div);
-    });
+  const reportedPostContainer = document.getElementById( "reported" );
+  reportedPostContainer.textContent = "";
+  const reportedPosts = getReportedPosts();
+  reportedPosts.forEach((post) => {
+      const div = createPost(post);
+      reportedPostContainer.appendChild(div);
+  });
 };
 
 const loadPosts = async () =>{
